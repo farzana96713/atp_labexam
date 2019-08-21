@@ -248,7 +248,7 @@ class HomeController extends Controller
 	
 	
     	
-		$a= post::where('country',$req->search)->where('poststatus',"active")->get();
+		$a= post::where('country',$req->search)->orWhere('cost',$req->search)->orWhere('place',$req->search)->where('poststatus',"active")->get();
 		return view('home.publishedposts', ['lm'=> $a]);
 		
 		

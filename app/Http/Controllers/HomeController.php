@@ -170,6 +170,40 @@ class HomeController extends Controller
     
     }
 	
+	 public function requests(Request $req){
+		$req = post::all();
+    	return view('home.requests', ['sc'=> $req]);
+	}
+	
+	public function activestatus($id)
+	{
+		  $status= post::find($id);
+		 if($status->poststatus=='inactive')
+	   {
+		 $a="active";
+		
+		$status->poststatus=$a;
+    	
+    	$status->save();
+		return redirect()->route('home.requests');
+        }
+		else if($status->poststatus=='active')
+	   {
+		 $a="inactive";
+		
+		$status->poststatus=$a;
+    	
+    	$status->save();
+		return redirect()->route('home.requests');
+        }
+		else{
+			
+		}
+	
+		
+		
+	}
+	
 
   
 

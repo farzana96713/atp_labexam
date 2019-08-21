@@ -54,6 +54,12 @@ Route::post('/home/deletegeneral/{sid}', 'HomeController@deletegeneral');
 Route::get('/home/scouthome/postrequest', 'HomeController@postrequest')->name('home.postrequest');	
 Route::post('/home/scouthome/postrequest', 'HomeController@post');
 
+Route::get('/home/adminhome/requests', 'HomeController@requests')->name('home.requests');	
+
+Route::get('/home/activestatus/{id}', 'HomeController@activestatus')->name('home.activestatus');	
+
+
+
 
 
 

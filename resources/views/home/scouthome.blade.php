@@ -8,7 +8,7 @@
 
 	
 	<a href="{{route('home.scoutinfo', session('scout'))}}">My Info</a> |
-	<a href=""> List</a> |
+	<a href="{{route('home.postrequest')}}"> Post request</a> |
 	<a href="{{route('logout.index')}}">logout</a>
 
 

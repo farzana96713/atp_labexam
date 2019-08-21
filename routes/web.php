@@ -51,6 +51,9 @@ Route::post('/home/addgeneral', 'HomeController@addgen');
 Route::get('/home/deletegeneral/{sid}', 'HomeController@deletegeneral')->name('home.deletegeneral');	
 Route::post('/home/deletegeneral/{sid}', 'HomeController@deletegeneral');
 
+Route::get('/home/scouthome/postrequest', 'HomeController@postrequest')->name('home.postrequest');	
+Route::post('/home/scouthome/postrequest', 'HomeController@post');
+
 
 
 

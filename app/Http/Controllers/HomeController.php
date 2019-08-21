@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Login;
 use Validator;
 use App\Http\Requests\StudentRequest;
+use App\post;
 
 class HomeController extends Controller
 {
@@ -144,6 +145,30 @@ class HomeController extends Controller
 		login::destroy($scid);
 		return redirect()->route('home.generallist');
 	}
+	public function postrequest(Request $req){
+        return view('home.postrequest');
+    
+    }
+	public function post(Request $req){
+     $sign = new post();
+    	$sign->country = $req->country;
+		$sign->place = $req->place;
+    	$sign->cost = $req->cost;
+    	$sign->travelmedium= $req->medium;
+		$sign->description = $req->description;
+		$sign->representation=$req->representation;
+		$sign->poststatus="inactive";
+		
+		
+    	
+    	$sign->save();
+
+    	$data = post::where('country', $req->country)->where('place', $req->place)->where('cost', $req->cost)->where('travelmedium', $req->medium)->where('description', $req->description)->where('representation', $req->representation)->where('poststatus', "inactive")->get();
+		
+		
+    	return redirect()->route('home.scouthome');
+    
+    }
 	
 
   

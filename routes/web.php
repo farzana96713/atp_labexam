@@ -43,6 +43,14 @@ Route::post('/home/addscout', 'HomeController@addsc');
 Route::get('/home/deletescout/{sid}', 'HomeController@deletescout')->name('home.deletescout');	
 Route::post('/home/deletescout/{sid}', 'HomeController@deletescout');
 
+Route::get('/home/generallist', ['as'=>'home.generallist','uses'=>'HomeController@generallist']);
+
+Route::get('/home/addgeneral', 'HomeController@addgeneral')->name('home.addgeneral');
+Route::post('/home/addgeneral', 'HomeController@addgen');
+
+Route::get('/home/deletegeneral/{sid}', 'HomeController@deletegeneral')->name('home.deletegeneral');	
+Route::post('/home/deletegeneral/{sid}', 'HomeController@deletegeneral');
+
 
 
 

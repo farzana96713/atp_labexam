@@ -113,6 +113,38 @@ class HomeController extends Controller
 		return redirect()->route('home.scoutlist');
 	}
 	
+	 public function generallist(Request $req){
+		$general = login::all()->where('type',"generalusers");
+    	return view('home.generallist', ['sc'=> $general]);
+	}
+	
+	  public function addgeneral(){
+
+    	return view('home.addgeneral');
+    }
+	 public function addgen(Request $req){
+
+    	$general = new login();
+    	$general->username = $req->uname;
+    	$general->password = $req->pass;
+    	$general->address = $req->address;
+    	$general->phone = $req->phone;
+    	$general->email = $req->email;
+		$general->type = "generalusers";
+		
+    	
+    	$general->save();
+
+    	$data = login::where('username', $req->uname)->where('password', $req->pass)->where('address', $req->address)->where('phone', $req->phone)->where('email', $req->email)->where('type', "generalusers")->get();
+    	return redirect()->route('home.generallist');
+    }
+	
+	  public function deletegeneral($scid){
+   
+		login::destroy($scid);
+		return redirect()->route('home.generallist');
+	}
+	
 
   
 

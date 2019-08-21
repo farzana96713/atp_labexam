@@ -70,6 +70,8 @@ Route::get('/home/publishedposts', 'HomeController@publishedposts')->name('home.
 Route::post('/home/publishedposts', 'HomeController@search');
 
 
+Route::get('/home/details/{id}', 'HomeController@details')->name('home.details');
+
 
 
 

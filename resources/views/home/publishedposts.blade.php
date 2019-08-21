@@ -135,8 +135,7 @@
             <th>Place</th>
             <th>Cost</th>
             <th>Travel Medium</th>
-			<th>Description</th>
-			<th>Rep</th>
+			
 		
 		
 			
@@ -153,8 +152,7 @@
 		                              	
 		                              	<td> {{$value['cost']}}</td>
 										<td> {{$value['travelmedium']}}</td>
-										<td>{{$value['description']}}</td>
-										<td>{{$value['representation']}}</td>
+										<td><a style="float: right;" type="button" href="{{route('home.details',$value['id'])}}" class="btn btn-primary" > Details</a></td>
 										
 										
 										

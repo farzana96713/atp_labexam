@@ -243,16 +243,16 @@ class HomeController extends Controller
 	
 	  public function search(Request $req){
    
-   
-   
-	
-	
-    	
-		$a= post::where('country',$req->search)->orWhere('cost',$req->search)->orWhere('place',$req->search)->where('poststatus',"active")->get();
+        $a= post::where('country',$req->search)->orWhere('cost',$req->search)->orWhere('place',$req->search)->where('poststatus',"active")->get();
 		return view('home.publishedposts', ['lm'=> $a]);
 		
 		
 	}
+			 public function details(Request $req, $id){
+		$details = post::find($id);
+		return view('home.details', ['inf'=>$details]);
+	}
+	
 	
 
   

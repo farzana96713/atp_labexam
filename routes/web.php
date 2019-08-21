@@ -66,6 +66,8 @@ Route::post('/home/editposts/{id}', 'HomeController@editpo');
 Route::get('/home/deleteposts/{sid}', 'HomeController@deleteposts')->name('home.deleteposts');	
 Route::post('/home/deleteposts/{sid}', 'HomeController@deleteposts');
 
+Route::get('/home/publishedposts', 'HomeController@publishedposts')->name('home.publishedposts');
+
 
 
 	

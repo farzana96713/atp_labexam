@@ -8,7 +8,7 @@
 
 	
 	<a href="{{route('home.generalinfo', session('general'))}}">My Info</a> |
-	<a href=""> List</a> |
+	<a href="{{route('home.publishedposts')}}"> Published Posts</a> |
 	<a href="{{route('logout.index')}}">logout</a>
 
 

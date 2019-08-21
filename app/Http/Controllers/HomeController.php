@@ -235,6 +235,12 @@ class HomeController extends Controller
 		return redirect()->route('home.viewposts');
 	}
 	
+	
+	 public function publishedposts(Request $req){
+		$req = post::all()->where('poststatus',"active");
+    	return view('home.publishedposts', ['lm'=> $req]);
+	}
+	
 
   
 

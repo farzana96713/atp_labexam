@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Published </title>
+    <title>Published Posts</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -112,7 +112,7 @@
     <div class="testbox">
       <form method="post">
 	  @csrf
-        <u><center><h1>Requests from scout</h1></center></u>
+        <u><center><h1>Published Posts</h1></center></u>
        
 	
 		<a style="float: right;" type="button" href="{{route('logout.index')}}" class="btn btn-primary" > LOGOUT</a>
@@ -120,24 +120,23 @@
 		
         <table>
           <tr>
-              <th>Id</th>
+             
             <th>Country</th>
             <th>Place</th>
             <th>Cost</th>
             <th>Travel Medium</th>
 			<th>Description</th>
 			<th>Rep</th>
-			<th>poststatus</th>
-			<th></th>
-			<th></th>
+		
+		
 			
 			
 			
           </tr>
-                       @foreach($sc as $value)
+                       @foreach($lm as $value)
 								   
 		                             <tr>
-									    <td>{{$value['id']}}</td>
+									  
 		                             	<td>{{$value['country']}}</td>
 										<td> {{$value['place']}}</td>
 										
@@ -146,12 +145,11 @@
 										<td> {{$value['travelmedium']}}</td>
 										<td>{{$value['description']}}</td>
 										<td>{{$value['representation']}}</td>
-										<td>{{$value['poststatus']}}</td>
 										
 										
 										
-			                           	<td><a href="{{route('home.editposts',$value['id'])}} " type="button" class="btn btn-primary">Edit</a></td>
-											<td><a href="{{route('home.deleteposts',$value['id'])}} " type="button" class="btn btn-primary">Delete</a></td>
+										
+			                         
 										
 			                        
 			                          </tr>

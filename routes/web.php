@@ -23,6 +23,10 @@ Route::get('/login','LoginController@index')->name('login.index');
 Route::post('/login','LoginController@verify');
 Route::get('/login/signup', 'LoginController@signup')->name('login.signup');	
 Route::post('/login/signup', 'LoginController@sign');
+Route::get('/home/adminhome', 'HomeController@adminhome')->name('home.adminhome');	
+Route::get('/home/scouthome', 'HomeController@scouthome')->name('home.scouthome');	
+Route::get('/home/generalhome', 'HomeController@generalhome')->name('home.generalhome');	
+
 
 
 

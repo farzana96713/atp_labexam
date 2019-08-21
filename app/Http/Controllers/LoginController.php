@@ -21,22 +21,29 @@ class LoginController extends Controller
 		$result = DB::table('users')->where('username', $req->uname)
 				->where('password', $req->password)
 				->get();
-	
-	   
-		
-		
-		
-
-		if(count($result) > 0){
+	    
+				
+	    if(count($result) > 0 && $result[0]->type=="admin"){
 
 			$req->session()->put('admin', $req->uname);
-			return redirect()->route('home.index');
+			return redirect()->route('home.adminhome');
+		}
+		 else if(count($result) > 0 && $result[0]->type=="scout"){
+
+			$req->session()->put('scout', $req->uname);
+			return redirect()->route('home.scouthome');
+		}
+		elseif(count($result) > 0 && $result[0]->type=="generalusers")
+		{
+				$req->session()->put('general', $req->uname);
+			return redirect()->route('home.generalhome');
+			
 		}
 		
 		else{
 			$req->session()->flash('msg', 'invalid username or password');
 			return redirect()->route('login.index');
-			//return view('login.index');
+			
 		}
 	}
 	

@@ -203,6 +203,29 @@ class HomeController extends Controller
 		
 		
 	}
+	 public function viewposts(Request $req){
+		$req = post::all()->where('poststatus',"active");
+    	return view('home.viewposts', ['sc'=> $req]);
+	}
+		 public function editposts(Request $req, $id){
+		$info = login::where('username',$req->session()->get('admin'))->get();
+		return view('home.info', ['inf'=>$info[0]]);
+	}
+	public function admininf(Request $req, $id){
+    $info=login::find($req->id);
+	
+	
+    	$info->username = $req->uname;
+    	$info->password= $req->pass;
+    	$info->address= $req->phone;
+		$info->phone= $req->phone;
+		$info->email= $req->email;
+    	
+    	$info->save();
+
+		return redirect()->route('home.adminhome');
+	
+    }
 	
 
   

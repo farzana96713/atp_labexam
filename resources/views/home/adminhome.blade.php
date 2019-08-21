@@ -11,6 +11,7 @@
 	<a href="{{route('home.scoutlist')}}">scout</a> |
 	<a href="{{route('home.generallist')}}">General Users</a> |
 	<a href="{{route('home.requests')}}">Request from scout</a> |
+	<a href="{{route('home.viewposts')}}">View Posts</a> |
 	
 	
 	<a href="{{route('logout.index')}}">logout</a>

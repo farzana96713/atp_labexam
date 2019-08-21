@@ -36,6 +36,13 @@ Route::post('/home/scoutinfo/{id}', 'HomeController@scoutinf');
 Route::get('/home/generalinfo/{id}', 'HomeController@generalinfo')->name('home.generalinfo');	
 Route::post('/home/generalinfo/{id}', 'HomeController@generalinf');	
 
+Route::get('/home/scoutlist', ['as'=>'home.scoutlist','uses'=>'HomeController@scoutlist']);
+
+Route::get('/home/addscout', 'HomeController@addscout')->name('home.addscout');
+Route::post('/home/addscout', 'HomeController@addsc');
+Route::get('/home/deletescout/{sid}', 'HomeController@deletescout')->name('home.deletescout');	
+Route::post('/home/deletescout/{sid}', 'HomeController@deletescout');
+
 
 
 

@@ -8,7 +8,10 @@
 
 	
 	<a href="{{route('home.admininfo', session('admin'))}}">My Info</a> |
-	<a href=""> List</a> |
+	<a href="{{route('home.scoutlist')}}">scout</a> |
+	<a href="{{route('home.generallist')}}">General Users</a> |
+	
+	
 	<a href="{{route('logout.index')}}">logout</a>
 
 

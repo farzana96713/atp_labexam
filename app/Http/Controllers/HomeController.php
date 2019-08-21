@@ -82,6 +82,36 @@ class HomeController extends Controller
 
 		return redirect()->route('home.generalhome');
     }
+	 public function scoutlist(Request $req){
+		$scout = login::all()->where('type',"scout");
+    	return view('home.scoutlist', ['sc'=> $scout]);
+	}
+	
+	  public function addscout(){
+
+    	return view('home.addscout');
+    }
+	 public function addsc(Request $req){
+
+    	$scout = new login();
+    	$scout->username = $req->uname;
+    	$scout->password = $req->pass;
+    	$scout->address = $req->address;
+    	$scout->phone = $req->phone;
+    	$scout->email = $req->email;
+		$scout->type = "scout";
+		
+    	
+    	$scout->save();
+
+    	$data = login::where('username', $req->uname)->where('password', $req->pass)->where('address', $req->address)->where('phone', $req->phone)->where('email', $req->email)->where('type', "scout")->get();
+    	return redirect()->route('home.scoutlist');
+    }
+	  public function deletescout($scid){
+   
+		login::destroy($scid);
+		return redirect()->route('home.scoutlist');
+	}
 	
 
   

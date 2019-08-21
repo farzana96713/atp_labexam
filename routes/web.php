@@ -27,6 +27,15 @@ Route::get('/home/adminhome', 'HomeController@adminhome')->name('home.adminhome'
 Route::get('/home/scouthome', 'HomeController@scouthome')->name('home.scouthome');	
 Route::get('/home/generalhome', 'HomeController@generalhome')->name('home.generalhome');	
 
+Route::get('/home/admininfo/{id}', 'HomeController@admininfo')->name('home.admininfo');	
+Route::post('/home/admininfo/{id}', 'HomeController@admininf');	
+
+Route::get('/home/scoutinfo/{id}', 'HomeController@scoutinfo')->name('home.scoutinfo');	
+Route::post('/home/scoutinfo/{id}', 'HomeController@scoutinf');	
+
+Route::get('/home/generalinfo/{id}', 'HomeController@generalinfo')->name('home.generalinfo');	
+Route::post('/home/generalinfo/{id}', 'HomeController@generalinf');	
+
 
 
 

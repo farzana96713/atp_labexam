@@ -7,9 +7,9 @@
 	<h1>Welcome Home! {{session('general')}}</h1> 
 
 	
-	<a href="">Create</a> |
+	<a href="{{route('home.generalinfo', session('general'))}}">My Info</a> |
 	<a href=""> List</a> |
-	<a href="">logout</a>
+	<a href="{{route('logout.index')}}">logout</a>
 
 
 </body>

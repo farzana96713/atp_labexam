@@ -241,6 +241,19 @@ class HomeController extends Controller
     	return view('home.publishedposts', ['lm'=> $req]);
 	}
 	
+	  public function search(Request $req){
+   
+   
+   
+	
+	
+    	
+		$a= post::where('country',$req->search)->where('poststatus',"active")->get();
+		return view('home.publishedposts', ['lm'=> $a]);
+		
+		
+	}
+	
 
   
 

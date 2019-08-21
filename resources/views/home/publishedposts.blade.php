@@ -112,6 +112,16 @@
     <div class="testbox">
       <form method="post">
 	  @csrf
+	  <a>Search:</a>
+	  <input name="search" type="text" >
+      <input type="submit" value="search">
+	  
+	  
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
         <u><center><h1>Published Posts</h1></center></u>
        
 	

@@ -61,7 +61,7 @@ Route::get('/home/activestatus/{id}', 'HomeController@activestatus')->name('home
 Route::get('/home/adminhome/viewposts', 'HomeController@viewposts')->name('home.viewposts');
 
 Route::get('/home/editposts/{id}', 'HomeController@editposts')->name('home.editposts');	
-Route::post('/home/aeditposts/{id}', 'HomeController@editpo');	
+Route::post('/home/editposts/{id}', 'HomeController@editpo');	
 
 
 

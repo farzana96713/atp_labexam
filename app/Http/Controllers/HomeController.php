@@ -208,22 +208,24 @@ class HomeController extends Controller
     	return view('home.viewposts', ['sc'=> $req]);
 	}
 		 public function editposts(Request $req, $id){
-		$info = login::where('username',$req->session()->get('admin'))->get();
-		return view('home.info', ['inf'=>$info[0]]);
+		$info = post::find($id);
+		return view('home.editposts', ['inf'=>$info]);
 	}
-	public function admininf(Request $req, $id){
-    $info=login::find($req->id);
+	public function editpo(Request $req, $id){
+    $post=post::find($req->id);
 	
 	
-    	$info->username = $req->uname;
-    	$info->password= $req->pass;
-    	$info->address= $req->phone;
-		$info->phone= $req->phone;
-		$info->email= $req->email;
+    	$post->country = $req->country;
+    	$post->place= $req->place;
+    	$post->cost= $req->cost;
+		$post->travelmedium= $req->medium;
+		$post->description= $req->description;
+		$post->representation= $req->representation;
+		
     	
-    	$info->save();
+    	$post->save();
 
-		return redirect()->route('home.adminhome');
+		return redirect()->route('home.viewposts');
 	
     }
 	

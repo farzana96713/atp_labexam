@@ -72,12 +72,18 @@
 						<span class="focus-input100"></span>
 					</div>
 					
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Address is required">
+						<span class="label-input100">Place a comment</span>
+						<input  name="comment" class="input100" type="text">
+						<span class="focus-input100"></span>
+					</div>
+					
 					
 					
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Update
+							Place a comment
 						</button>
 					</div>
 				</form>

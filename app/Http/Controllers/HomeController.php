@@ -7,6 +7,7 @@ use App\Login;
 use Validator;
 use App\Http\Requests\StudentRequest;
 use App\post;
+use App\comment;
 
 class HomeController extends Controller
 {
@@ -248,9 +249,25 @@ class HomeController extends Controller
 		
 		
 	}
-			 public function details(Request $req, $id){
+     public function details(Request $req, $id){
 		$details = post::find($id);
 		return view('home.details', ['inf'=>$details]);
+	}
+	
+     public function det(Request $req, $id){
+		 	$comment = new comment();
+    	$comment->country = $req->country;
+    	$comment->place = $req->place;
+    	$comment->comment = $req->comment;
+    	$comment->cid = $id;
+    	
+		
+    	
+    	$comment->save();
+
+    	$data = comment::where('country', $req->country)->where('place', $req->place)->where('comment', $req->comment)->where('cid', $id)->get();
+    	return redirect()->route('home.publishedposts');
+	
 	}
 	
 	

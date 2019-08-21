@@ -269,6 +269,15 @@ class HomeController extends Controller
     	return redirect()->route('home.publishedposts');
 	
 	}
+	 public function viewcomments(Request $req){
+		$req = comment::all();
+    	return view('home.viewcomments', ['sc'=> $req]);
+	}
+	 public function deletecomments($scid){
+   
+		comment::destroy($scid);
+		return redirect()->route('home.viewcomments');
+	}
 	
 	
 

@@ -229,6 +229,12 @@ class HomeController extends Controller
 	
     }
 	
+	  public function deleteposts($scid){
+   
+		post::destroy($scid);
+		return redirect()->route('home.viewposts');
+	}
+	
 
   
 

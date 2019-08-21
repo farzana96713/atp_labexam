@@ -63,6 +63,9 @@ Route::get('/home/adminhome/viewposts', 'HomeController@viewposts')->name('home.
 Route::get('/home/editposts/{id}', 'HomeController@editposts')->name('home.editposts');	
 Route::post('/home/editposts/{id}', 'HomeController@editpo');	
 
+Route::get('/home/deleteposts/{sid}', 'HomeController@deleteposts')->name('home.deleteposts');	
+Route::post('/home/deleteposts/{sid}', 'HomeController@deleteposts');
+
 
 
 	

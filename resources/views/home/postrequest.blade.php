@@ -46,7 +46,7 @@
 					
 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Password is required">
 						<span class="label-input100">place</span>
-						<input   name="place" class="input100" type="password">
+						<input   name="place" class="input100" type="text">
 						<span class="focus-input100"></span>
 					</div>
 				
